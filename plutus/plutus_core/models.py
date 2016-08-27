@@ -1,13 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-
-# TODO: User 
 
 class Opportunity(models.Model):
     '''
     Represents a job opportunity eg a listing  
     '''
+
+    # User
+    user = models.ForeignKey(User, unique=True, null=True)
     
     # Company
     company = models.CharField(null=False, max_length=128)
