@@ -1,6 +1,12 @@
 {% extends 'plutus_core/base.html' %}
-
+{% load render_bundle from webpack_loader %}
 {% block content %}
     {{ block.super }}
-    wuddup 
+        
+    Tryin out that r e a c t
+    <br> 
+    <div id="container"></div>
+    {% render_bundle 'main' %} 
+    
+
 {% endblock %}
