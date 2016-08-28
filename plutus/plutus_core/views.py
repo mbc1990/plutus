@@ -1,14 +1,20 @@
 from forms import LoginForm 
 from django.http import HttpResponse
 from django.views.generic.edit import FormView
+from django.views.generic import TemplateView
+from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
 # Create your views here.
+class HomeView(TemplateView):
 
-@login_required(login_url="login/")
-def home(request):
-    return HttpResponse("Hello you are loged in"+str(request.user.is_authenticated()))
+    template_name = "plutus_core/home.html"
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(HomeView, self).dispatch(*args, **kwargs)
+
 
 class LoginView(FormView):
 

@@ -1,6 +1,7 @@
 {% extends 'plutus_core/base.html' %}
 
 {% block content %}
+    {{ block.super }}
     Log in nerd
     user: {{ request.user.is_authenticated }}
     <form action="" method="post">{% csrf_token %}

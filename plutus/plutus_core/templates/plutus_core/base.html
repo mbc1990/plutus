@@ -2,11 +2,25 @@
 
 <head>
     {% block deps %}
-        {# Javascript library includes #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="https://use.fontawesome.com/5f5c2f0c6d.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
     {% endblock %}
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h1>
+                        Plutu<i class="fa fa-usd" aria-hidden="true"></i>
+                    </h1>
+                    <p>The surprisingly simple job-hunting CRM</p>
+                    {% block content %}{% endblock %}
+                </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
 </body>
